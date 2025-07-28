@@ -28,6 +28,10 @@ header.header {
   box-sizing: border-box;
 }
 
+.profile-link {
+  display: inline-block;
+}
+
 .profile-pic {
   width: 120px;
   height: 120px;
@@ -35,6 +39,7 @@ header.header {
   object-fit: cover;
   margin-right: 30px;
   border: 3px solid #ffffff;
+  cursor: zoom-in;
 }
 
 .header-text {
@@ -67,22 +72,6 @@ header.header {
   color: #ffffff;
 }
 
-/* Mise en page du footer */
-
-footer.footer {
-  background-color: #17abb3;
-  color: #ffffff;
-  padding: 20px 0;
-  max-width: 1160px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-icons i {
-  color: #ffffff;
-  font-size: 1.5em;
-  margin: 0 10px;
-}
 
 /* Mise en paége du corps du CV */
 
@@ -135,6 +124,30 @@ section h3 {
 /* Style listes */
 ul{
     font-size: 0.8rem;
+}
+
+.item {
+  position: relative;
+  padding-left: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  bottom: 1px;
+  width: 4px;
+  background-color: transparent;
+}
+
+.item:hover {
+  background-color: #e3e3e3; /* fond au survol */
+}
+
+.item:hover::before {
+  background-color: #17abb3; /* trait turquoise */
 }
 
 /* Compétences */
@@ -197,3 +210,23 @@ ul.langues .niveau {
   text-align: right;
 }
 
+/* Mise en page du footer */
+
+footer.footer {
+  background-color: #17abb3;
+  color: #ffffff;
+  padding: 20px 0;
+  max-width: 1160px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-icons i {
+  color: #ffffff;
+  font-size: 1.5em;
+  margin: 0 10px;
+}
+
+.footer-icons a:hover i {
+  opacity: 0.7; /* Réduction de l’opacité au survol */
+}
